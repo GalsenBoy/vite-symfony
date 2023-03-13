@@ -6,4 +6,9 @@ export default defineConfig({
   root:'./assets',
   cors:true,
   plugins: [vue()],
+  build:{
+    base:'/assets/',
+    assetsDir:'',
+    outDir: '../public/assets/'
+  } 
 })
