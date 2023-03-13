@@ -2,11 +2,13 @@
 
 namespace App\Entity;
 
+use ApiPlatform\Metadata\ApiResource;
 use App\Repository\ArticleRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 
 #[ORM\Entity(repositoryClass: ArticleRepository::class)]
+#[ApiResource()]
 class Article
 {
     #[ORM\Id]
@@ -23,6 +25,9 @@ class Article
     #[ORM\Column]
     private ?\DateTimeImmutable $create_at = null;
 
+    public function __construct(){
+        $this->create_at = new \DateTimeImmutable();
+    }
     public function getId(): ?int
     {
         return $this->id;
