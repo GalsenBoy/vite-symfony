@@ -11,9 +11,12 @@
     <script src="//localhost:5173/main.js" type="module" defer></script>
     #}
     <script src="/assets/index-5ee0f7f0.js" type="module" defer></script>
+    <link rel="stylesheet" href="/assets/index-2927c434.css" />
     {% block stylesheets %}{% endblock %} {% block javascripts %}{% endblock %}
   </head>
   <body>
-    {% block body %}{% endblock %}
+    {% block body %}
+    <div id="app"></div>
+    {% endblock %}
   </body>
 </html>

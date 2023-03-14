@@ -8,11 +8,11 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class HomeController extends AbstractController
 {
-    #[Route('/', name: 'app_home')]
-    public function index(): Response
+    #[Route('/app/{vuejsRoute}', name: 'app_home', requirements: ['vuejsRoute' => '.+'])]
+    public function index($vuejsRoute): Response
     {
-        return $this->render('home/index.html.twig', [
-            'controller_name' => 'HomeController',
+        return $this->render('base.html.twig', [
+            'vuejs_route' => $vuejsRoute
         ]);
     }
 }
