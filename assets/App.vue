@@ -9,6 +9,8 @@ import HelloWorld from './components/HelloWorld.vue'
     </a>
   </div>
   <HelloWorld msg="Vite + Vue" />
+  <router-link to="/test"><button class="btn btn-warning">le fameux Test</button></router-link>
+  <router-view />
 </template>
 
 <style scoped>
